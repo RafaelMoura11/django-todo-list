@@ -4,6 +4,13 @@
 
 {% block content %}
 <div>
-    Hello world
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for task in tasks %}
+            <a href="details/{{task.id}}">
+                <li>{{ task.title }}</li>
+            </a>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

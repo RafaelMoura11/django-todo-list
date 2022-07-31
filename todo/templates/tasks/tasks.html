@@ -11,6 +11,23 @@
                 <li>{{ task.title }}</li>
             </a>
         {% endfor %}
+        <div>
+            <div>
+                {% if tasks.has_previous %}
+                    <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+                {% endif %}
+                
+                {% if tasks.paginator.num_pages %}
+                <span>
+                    {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+                </span>
+                {% endif %}
+            
+                {% if tasks.has_next %}
+                    <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                {% endif %}
+            </div>
+        </div>
     </ul>
 </div>
 {% endblock %}

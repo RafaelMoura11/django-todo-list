@@ -5,6 +5,7 @@
 {% block content %}
 <div>
     <h1 class="list-title">Lista de Tarefas</h1>
+    <a href="create">Criar nova Tarefa</a>
     <ul class="task-list">
         {% for task in tasks %}
             <a href="details/{{task.id}}" class="task-link">

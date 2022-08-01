@@ -56,3 +56,12 @@ def delete_task(request, id):
     messages.info(request, 'Tarefa deletada com sucesso!')
 
     return redirect(f'/?page={current_page_number}/')
+
+
+def change_status(request, id):
+    task = get_object_or_404(Task, pk=id)
+    task.done = not task.done
+
+    task.save()
+
+    return redirect('/')

@@ -8,9 +8,13 @@
     <a href="create">Criar nova Tarefa</a>
     <ul class="task-list">
         {% for task in tasks %}
-            <a href="details/{{task.id}}" class="task-link">
-                <li class="task">{{ task.title }}</li>
-            </a>
+            <li class="task">
+                <a href="details/{{task.id}}" class="task-link">{{ task.title }}</a>
+                <div>
+                    <a class="edit" href="/edit/{{task.id}}">Editar</a>
+                    <a class="delete" href="/delete/{{task.id}}">Deletar</a>
+                </div>
+            </li>
         {% endfor %}
     </ul>
     <div class="pagination">

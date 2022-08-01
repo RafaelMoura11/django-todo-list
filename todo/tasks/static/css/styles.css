@@ -71,3 +71,18 @@ body {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+
+/* Icons */
+
+.icons-container {
+    margin-right: 10px;
+}
+
+.fa-trash {
+    color: #ff0000ba;
+}
+
+.fa-edit {
+    color: #ef9525;
+}

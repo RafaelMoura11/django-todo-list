@@ -10,9 +10,9 @@
         {% for task in tasks %}
             <li class="task">
                 <a href="details/{{task.id}}" class="task-link">{{ task.title }}</a>
-                <div>
-                    <a class="edit" href="/edit/{{task.id}}">Editar</a>
-                    <a class="delete" href="/delete/{{task.id}}">Deletar</a>
+                <div class="icons-container">
+                    <a class="edit" href="/edit/{{task.id}}"><i class="fas fa-edit"></i></a>
+                    <a class="delete" href="/delete/{{task.id}}"><i class="fas fa-trash"></i></a>
                 </div>
             </li>
         {% endfor %}

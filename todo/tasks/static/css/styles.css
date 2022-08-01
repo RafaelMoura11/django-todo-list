@@ -109,3 +109,13 @@ ul.messages li {
     list-style: none;
 }
 
+/* Login e Registro */
+
+.row, .change-form {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.register-link {
+    margin-top: 10px;
+}

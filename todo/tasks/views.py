@@ -8,7 +8,8 @@ from django.contrib import messages
 
 @login_required
 def get_tasks(request):
-    task_list = Task.objects.all().order_by('-created_at')
+    task_list = Task.objects.all().order_by('-created_at').filter(
+            user=request.user)
     paginator = Paginator(task_list, 5)
     page = request.GET.get('page')
     tasks = paginator.get_page(page)
@@ -44,7 +45,8 @@ def create_task(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            task = form.save()
+            task = form.save(commit=False)
+            task.user = request.user
             task.save()
             return redirect('/')
     else:

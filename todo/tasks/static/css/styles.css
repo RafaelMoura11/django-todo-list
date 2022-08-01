@@ -111,6 +111,10 @@ ul.messages li {
 
 /* Login e Registro */
 
+.card-body {
+    box-shadow: 2px 4px #888888;
+}
+
 .row, .change-form {
     margin-top: 5%;
     margin-bottom: 10%;

@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 from .models import Task
 from .forms import TaskForm
+from django.contrib import messages
 
 
 def helloWorld(request):
@@ -49,3 +50,14 @@ def create_task(request):
     else:
         form = TaskForm()
         return render(request, 'tasks/create-task.html', {'form': form})
+
+
+def deleteTask(request, id):
+    task = get_object_or_404(Task, pk=id)
+    task.delete()
+
+    current_page_number = request.POST.get("current_page_number", " ")
+
+    messages.info(request, 'Tarefa deletada com sucesso!')
+
+    return redirect(f'/?page={current_page_number}/')

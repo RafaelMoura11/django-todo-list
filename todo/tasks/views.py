@@ -40,5 +40,12 @@ def edit_task(request, id):
 
 
 def create_task(request):
-    form = TaskForm()
-    return render(request, 'tasks/create-task.html', {'form': form})
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            task = form.save()
+            task.save()
+            return redirect('/')
+    else:
+        form = TaskForm()
+        return render(request, 'tasks/create-task.html', {'form': form})

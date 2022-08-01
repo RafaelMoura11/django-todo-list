@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from .models import Task
 from .forms import TaskForm
 from django.contrib import messages
 
 
+@login_required
 def get_tasks(request):
     task_list = Task.objects.all().order_by('-created_at')
     paginator = Paginator(task_list, 5)
@@ -14,11 +16,13 @@ def get_tasks(request):
     return render(request, 'tasks/tasks.html', {'tasks': tasks})
 
 
+@login_required
 def task_details(request, id):
     task = get_object_or_404(Task, pk=id)
     return render(request, 'tasks/task-details.html', {'task': task})
 
 
+@login_required
 def edit_task(request, id):
     task = get_object_or_404(Task, pk=id)
     form = TaskForm(instance=task)
@@ -35,6 +39,7 @@ def edit_task(request, id):
             'form': form, 'task': task})
 
 
+@login_required
 def create_task(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
@@ -47,6 +52,7 @@ def create_task(request):
         return render(request, 'tasks/create-task.html', {'form': form})
 
 
+@login_required
 def delete_task(request, id):
     task = get_object_or_404(Task, pk=id)
     task.delete()
@@ -58,6 +64,7 @@ def delete_task(request, id):
     return redirect(f'/?page={current_page_number}/')
 
 
+@login_required
 def change_status(request, id):
     task = get_object_or_404(Task, pk=id)
     task.done = not task.done

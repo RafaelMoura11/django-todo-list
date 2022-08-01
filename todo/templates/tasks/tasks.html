@@ -4,30 +4,30 @@
 
 {% block content %}
 <div>
-    <h1>Lista de Tarefas</h1>
-    <ul>
+    <h1 class="list-title">Lista de Tarefas</h1>
+    <ul class="task-list">
         {% for task in tasks %}
-            <a href="details/{{task.id}}">
-                <li>{{ task.title }}</li>
+            <a href="details/{{task.id}}" class="task-link">
+                <li class="task">{{ task.title }}</li>
             </a>
         {% endfor %}
-        <div>
-            <div>
-                {% if tasks.has_previous %}
-                    <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
-                {% endif %}
-                
-                {% if tasks.paginator.num_pages %}
-                <span>
-                    {{ tasks.number }} de {{ tasks.paginator.num_pages }}
-                </span>
-                {% endif %}
-            
-                {% if tasks.has_next %}
-                    <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
-                {% endif %}
-            </div>
-        </div>
     </ul>
+    <div class="pagination">
+        <div class="step-links">
+            {% if tasks.has_previous %}
+                <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
+            
+            {% if tasks.paginator.num_pages %}
+            <span class="current">
+                {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+            </span>
+            {% endif %}
+        
+            {% if tasks.has_next %}
+                <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

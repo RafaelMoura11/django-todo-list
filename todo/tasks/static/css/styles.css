@@ -16,3 +16,55 @@ body {
     font-weight: bold;
     color: yellow;
 }
+
+/* Task-List */
+
+.list-title {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.task-list {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+    padding: 0;
+}
+
+.task {
+    background: gainsboro;
+    text-indent: 10px;
+    list-style-type: none;
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom-style: dotted;
+    border-color: darkgray;
+}
+
+.task:hover {
+    background-color: #787878;
+}
+
+.task-link {
+    text-decoration: none;
+}
+
+/* Paginação */
+
+.pagination {
+    margin-bottom: 20px;
+}
+  
+.step-links {
+position: relative;
+margin-left: auto;
+margin-right: auto;
+}
+
+.step-links .current {
+margin-left: 5px;
+margin-right: 5px;
+}

@@ -33,7 +33,7 @@ body {
 }
 
 .task {
-    background: gainsboro;
+    background: rgb(250, 250, 250);
     list-style-type: none;
     height: 40px;
     padding-top: 5px;
@@ -45,8 +45,12 @@ body {
     justify-content: space-between;
 }
 
+.done {
+    background: #CCC;
+}
+
 .task:hover {
-    background-color: #787878;
+    background-color: #cacacac4;
 }
 
 .task-link {
@@ -87,6 +91,10 @@ body {
     color: #ef9525;
 }
 
+.doing .fa-check {
+    color: #a2a6ad;
+  }
+
 /* Messages */
 
 ul.messages {
@@ -100,3 +108,4 @@ ul.messages {
 ul.messages li {
     list-style: none;
 }
+

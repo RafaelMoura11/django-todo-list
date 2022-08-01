@@ -15,9 +15,14 @@
   {% endif %}
     <ul class="task-list">
         {% for task in tasks %}
-            <li class="task">
+            {% if task.done %}
+            <li class="task done">
+            {% else %}
+            <li class="task doing">
+            {% endif %}
                 <a href="details/{{task.id}}" class="task-link">{{ task.title }}</a>
                 <div class="icons-container">
+                    <a class="edit" href="/status/{{task.id}}"><i class="fas fa-check"></i></a>
                     <a class="edit" href="/edit/{{task.id}}"><i class="fas fa-edit"></i></a>
                     <a class="delete" href="/delete/{{task.id}}"><i class="fas fa-trash"></i></a>
                 </div>

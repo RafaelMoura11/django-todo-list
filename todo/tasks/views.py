@@ -37,3 +37,8 @@ def edit_task(request, id):
     else:
         return render(request, 'tasks/edit-task.html', {
             'form': form, 'task': task})
+
+
+def create_task(request):
+    form = TaskForm()
+    return render(request, 'tasks/create-task.html', {'form': form})

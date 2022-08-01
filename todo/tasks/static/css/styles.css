@@ -55,16 +55,18 @@ body {
 /* Paginação */
 
 .pagination {
-    margin-bottom: 20px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
 }
   
 .step-links {
-position: relative;
-margin-left: auto;
-margin-right: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .step-links .current {
-margin-left: 5px;
-margin-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }

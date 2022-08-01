@@ -6,6 +6,13 @@
 <div>
     <h1 class="list-title">Lista de Tarefas</h1>
     <a href="create" class="btn btn-primary">Criar nova Tarefa</a>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
     <ul class="task-list">
         {% for task in tasks %}
             <li class="task">

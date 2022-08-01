@@ -86,3 +86,17 @@ body {
 .fa-edit {
     color: #ef9525;
 }
+
+/* Messages */
+
+ul.messages {
+    padding: 0;
+    width: 20%;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+  
+ul.messages li {
+    list-style: none;
+}

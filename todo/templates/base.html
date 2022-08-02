@@ -14,6 +14,10 @@
   <nav class="navbar nav">
     <a href="/" class="navbar-brand">TO DO</a>
     {% if user.is_authenticated %}
+    <div>
+      <a href="/" class="navbar-info">Suas Tarefas</a>
+      <a href="/" class="navbar-info">Sobre nós</a>
+    </div>
     <a href="/accounts/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
     {% endif %}
   </nav>

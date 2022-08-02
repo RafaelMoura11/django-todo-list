@@ -17,6 +17,12 @@ body {
     color: yellow;
 }
 
+.navbar-info {
+    font-weight: 500;
+    color: yellow;
+    margin-right: 30px;
+}
+
 /* Task-List */
 
 .list-title {
